@@ -1,0 +1,36 @@
+class Box{
+	//-------attributes declarations--------
+	int length;
+	int width;
+	int height;
+	
+	//-------methods declarations--------
+	public void printVolume(){
+		int volume;
+		volume=length*width*height;
+		System.out.println("Volume of the box : "+volume);
+	}
+	public void setSize(int length, int width, int height){
+		private.length=length;
+		private.width=width;
+		private.height=height;
+	}
+}
+class Demo2{
+	public static void main(String args[]){
+		Box b1=new Box();
+		b1.setSize(12,5,3);
+		b1.printVolume(); //180
+		System.out.println("Length : "+b1.length); //12
+		System.out.println("Width  : "+b1.width); //5
+		System.out.println("Height : "+b1.height); //3
+		
+		b1.setLength(120);
+		b1.setWidth(50);
+		b1.setHeight(30);
+		b1.printVolume(); //180000
+		System.out.println("Length : "+b1.length); //120
+		System.out.println("Width  : "+b1.width); //50
+		System.out.println("Height : "+b1.height); //30
+	}
+}
