@@ -11,10 +11,20 @@ class HomePage extends JFrame{
 	private JButton btnSearch;
 	private JButton btnViewOrders;
 	private JButton btnUpdateOrderDetails;
+	private JButton btnExit;
+	
+	private JLabel lblImage;
 	
 	// Constructor - HomePage
 	public HomePage(){
 		setTitle("WELLocme To BURGERS");
+		setSize(900,650);
+		setDegaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setLocationRelativeTo(null);
+		setResizable(false);
+		
+		initComponents();
+		
 		}
 	
 	}
