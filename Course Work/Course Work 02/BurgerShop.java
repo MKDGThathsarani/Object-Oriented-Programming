@@ -1,8 +1,22 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
+import java.io.File;
 
-class HomePage{
-	f1.setLayout(new GuidLayout(6,6));
+// ===== HomePage Class =====
+class HomePage extends JFrame{
+	
+	// ===== Button Declaretion =====
+	private JButton btnPlaceOrder;
+	private JButton btnSearch;
+	private JButton btnViewOrders;
+	private JButton btnUpdateOrderDetails;
+	
+	// Constructor - HomePage
+	public HomePage(){
+		setTitle("WELLocme To BURGERS");
+		}
+	
 	}
 
 
