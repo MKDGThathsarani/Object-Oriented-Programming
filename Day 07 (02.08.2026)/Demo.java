@@ -1,20 +1,33 @@
 class A{
 	int a;
-	public void printA(){
-		System.out.println("print a : "+a);
+	A(){
+		System.out.println("A()");
+	}
+	A(int i){
+		System.out.println("A(int)");
+	}
+	A(int i, int j){
+		System.out.println("A(int,int)");
 	}
 }
-class B extend A{ 
+class B extends A{ 
 	int b;
-	public void printB(){
-		System.out.println("print b : "+b);
+	B(){
+		System.out.println("B()");
 	}
-	public void printAB(){
-		System.out.println("print a : "+a);
-		System.out.println("print b : "+b);
+	B(int i){
+		System.out.println("B(int)");
 	}
-	public void callPrints(){
-		printA();
-		printB();
+	B(int i, int j){
+		System.out.println("B(int,int)");
+	}
+}
+class Demo{
+	public static void main(String args[]){
+		B b1=new B();
+		System.out.println("--------------");
+		B b2=new B(100);
+		System.out.println("--------------");
+		B b3=new B(100,200);
 	}
 }
