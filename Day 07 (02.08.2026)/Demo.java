@@ -13,15 +13,19 @@ class A{
 class B extends A{ 
 	int b;
 	B(){
+		super();
 		System.out.println("B()");
 	}
 	B(int i){
+		super(i);
 		System.out.println("B(int)");
 	}
 	B(int i, int j){
+		super(i,j);
 		System.out.println("B(int,int)");
 	}
 }
+
 class Demo{
 	public static void main(String args[]){
 		B b1=new B();
