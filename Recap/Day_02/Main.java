@@ -44,7 +44,7 @@ class BankAccount{
 			}
 			
 		public void display(){
-			System.out.println("Account: " + accountNumber);
+			System.out.println("Account: " + accoutNumber);
 			System.out.println("Holder: " + accoutHolder);
 			System.out.println("Balance: " + balance);
 			}
@@ -54,6 +54,15 @@ class BankAccount{
 		public static void main(String args[]){
 			BankAccount acc = new BankAccount("ACC001","Kmal",100000);
 			
-			System.out.println();
+			//Getter
+			System.out.println("Holder: " + acc.getAccoutHolder());
+			
+			//Setter
+			acc.setAccountHolder("Kamal Perera");
+			
+			acc.deposit(5000);
+			acc.withdraw(3000);
+			
+			acc.display();
 			}
 		} 
