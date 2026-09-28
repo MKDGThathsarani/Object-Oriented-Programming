@@ -1,51 +1,66 @@
-class A{
-	int a;
-	public void print(){
-		System.out.println("print of A ");
+import java.util.*;
+class WaterLevelObserver{
+	public void update(int waterLevel){
+		
 	}
 }
-class B extends A{ 
-	int b;
-	public void print(){
-		System.out.println("print of B ");
+class Alarm extends WaterLevelObserver{
+	public void update(int waterLevel){
+		System.out.println(waterLevel>=50 ? "Alarm ON":"Alarm OFF");
 	}
 }
-class C extends B{ 
-	int c;
-	public void print(){
-		System.out.println("print of C ");
+class Display extends WaterLevelObserver{
+	public void update(int waterLevel){
+		System.out.println("WaterLevel : "+waterLevel);
 	}
 }
-class D extends B{ 
-	int d;
-	public void print(){
-		System.out.println("print of D ");
+class SMSSender extends WaterLevelObserver{
+	public void update(int waterLevel){
+		System.out.println("Sending water level : "+waterLevel);
 	}
 }
-class Demo{
+class ControlRoom{
+	private WaterLevelObserver[] observerArray=new WaterLevelObserver[0]; 
+	
+	private int waterLevel;
+	
+	public void addWaterLevelObserver(WaterLevelObserver ob){
+		extendsArray();
+		observerArray[observerArray.length-1]=ob;
+	}
+	private void extendsArray(){
+		WaterLevelObserver[] tempObserverArray=new WaterLevelObserver[observerArray.length+1];
+		for (int i = 0; i < observerArray.length; i++){
+			tempObserverArray[i]=observerArray[i]; 
+		}
+		observerArray=tempObserverArray;
+		
+	}
+	
+	public void setWaterLevel(int waterLevel){
+		if(this.waterLevel!=waterLevel){
+			this.waterLevel=waterLevel;
+		}
+		for(int i=0; i<observerArray.length; i++){
+			observerArray[i].update(waterLevel);
+		}
+	}
+}
+
+
+class Demo{	
 	public static void main(String args[]){
-		A a1=new A();
-		A a2=new B();
-		A a3=new C();
-		A a4=new D();
+		ControlRoom controlRoom=new ControlRoom();
+		controlRoom.addWaterLevelObserver(new Alarm());
+		controlRoom.addWaterLevelObserver(new Display());
+		controlRoom.addWaterLevelObserver(new SMSSender());
 		
-		B b1=new B();
-		B b2=new C();
-		B b3=new D();
-		
-		C c1=new C();
-		D d1=new D();
-		
-		a1.print(); //
-		a2.print();	//
-		a3.print();
-		a4.print();
-		b1.print();
-		b2.print();
-		b3.print();
-		c1.print();
-		d1.print(); 
-		
-		
+		Random r=new Random();
+		while(true){
+			int waterLevel=r.nextInt(101); //0 to 100
+			controlRoom.setWaterLevel(waterLevel);
+			try{Thread.sleep(1000);}catch(Exception ex){}
+			System.out.println();
+		}	
 	}
 }
