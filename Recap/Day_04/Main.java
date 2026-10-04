@@ -16,7 +16,7 @@ class Calculator {
 // Method Overriding ()
 class Animal {
     public void sound() {
-        System.out.println("Animal makes sound");
+        System.out.println("Animal make sound");
     }
 }
 
