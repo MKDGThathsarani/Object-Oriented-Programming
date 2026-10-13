@@ -15,7 +15,7 @@ class BankAccount {
     // throws - method error 
     public void withdraw(double amount) throws InsufficientBalanceException {
         if (amount > balance) {
-            throw new InsufficientBalanceException("Balance!");
+            throw new InsufficientBalanceException("Balance! ");
         }
         balance -= amount;
         System.out.println("Withdrawn: " + amount);
