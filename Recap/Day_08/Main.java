@@ -31,8 +31,8 @@ public class Main {
         BankAccount acc = new BankAccount(10000);
         
         try {
-            acc.withdraw(5000);   // ✅ OK
-            acc.withdraw(8000);   // ❌ Error!
+            acc.withdraw(5000);   //  OK
+            acc.withdraw(8000);   //  Error!
         } catch (InsufficientBalanceException e) {
             System.out.println("Error: " + e.getMessage());
         } finally {
