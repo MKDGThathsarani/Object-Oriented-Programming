@@ -12,7 +12,7 @@ class BankAccount {
         this.balance = balance;
     }
     
-    // throws - method error 
+    // Throws - method error 
     public void withdraw(double amount) throws InsufficientBalanceException {
         if (amount > balance) {
             throw new InsufficientBalanceException("Balance! ");
