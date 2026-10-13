@@ -18,7 +18,7 @@ class BankAccount {
             throw new InsufficientBalanceException("Balance! ");
         }
         balance -= amount;
-        System.out.println("Withdrawn: " + amount);
+        System.out.println("Withdrawn Balance: " + amount);
     }
     
     public double getBalance() {
